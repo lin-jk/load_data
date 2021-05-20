@@ -85,5 +85,5 @@ user_label_dict = {0 : (1, 7), 1 : (5, 6), 2 : (2, 6), 3 : (0, 8), 4 : (3, 9)}
 train_100percent_noniid = get_data(user_num = user_num, user_label_mapping_dict = user_label_dict, bin = bin_train, x = train_x_total)
 test_100percent_noniid = get_data(user_num = user_num, user_label_mapping_dict = user_label_dict, bin = bin_test, x = test_x_total)
 
-json.dump(train_100percent_noniid, open("test_data.json", "w"))
-json.dump(test_100percent_noniid, open("train_data.json", "w"))
+json.dump(train_100percent_noniid, open("train_100percent_noniid.json", "w"))
+json.dump(test_100percent_noniid, open("test_100percent_noniid.json", "w"))

@@ -18,7 +18,7 @@ with open("C:\\Users\\林俊锞\\Desktop\\mnist\\t10k-labels.idx1-ubyte", mode =
 with open('C:\\Users\\林俊锞\\Desktop\\mnist\\t10k-images.idx3-ubyte', mode = 'rb') as test_image_file:
     magic , num_of_test_images_item, rows, columns = struct.unpack('>IIII', test_image_file.read(16)) #前16个字节不是真正的数据
     test_x_total = np.fromfile(test_image_file, dtype = np.uint8)    
-    test_x_total = test_x_total.reshape(num_of_test_images_item, 28, 28)
+    test_x_total = test_x_total.reshape(num_of_test_images_item, 28 * 28)
     test_x_2000 = test_x_total[:2000]
     #print(test_x_2000.shape)
     test_x_2000 = test_x_2000.tolist()
@@ -26,7 +26,7 @@ with open('C:\\Users\\林俊锞\\Desktop\\mnist\\t10k-images.idx3-ubyte', mode =
 with open('C:\\Users\\林俊锞\\Desktop\\mnist\\train-images.idx3-ubyte', mode = 'rb') as train_image_file:
     magic, num_of_train_images_item, _, _ = struct.unpack('>IIII', train_image_file.read(16))
     train_x_total = np.fromfile(train_image_file, dtype = np.uint8)
-    train_x_total = train_x_total.reshape(num_of_train_images_item, 28, 28)
+    train_x_total = train_x_total.reshape(num_of_train_images_item, 28 * 28)
     train_x_10000 = train_x_total[:10000]
     train_x_10000 = train_x_10000.tolist()
     #print(train_x_10000.shape)
